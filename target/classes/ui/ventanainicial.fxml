@@ -3,20 +3,27 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="529.0" prefWidth="636.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="529.0" prefWidth="636.0" style="-fx-background-color: #303030;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
    <children>
-      <Label text="Pega la URL que quieres descargar" />
+      <Label text="Pega la URL que quieres descargar" textFill="WHITE">
+         <font>
+            <Font name="Arial Nova Bold" size="18.0" />
+         </font></Label>
       <HBox prefHeight="26.0" prefWidth="742.0">
          <children>
-            <TextField fx:id="tfURL" prefHeight="4.0" prefWidth="485.0" />
+            <TextField fx:id="tfURL" prefHeight="40.0" prefWidth="492.0" />
             <Button fx:id="btAnadir" mnemonicParsing="false" onAction="#anadir" text="Añadir">
                <HBox.margin>
                   <Insets left="20.0" />
                </HBox.margin>
+               <font>
+                  <Font name="Arial Nova Bold" size="15.0" />
+               </font>
             </Button>
          </children>
          <VBox.margin>
@@ -28,9 +35,9 @@
             <Insets bottom="10.0" top="10.0" />
          </VBox.margin>
       </Separator>
-      <ScrollPane fx:id="spDescargas" prefHeight="425.0" prefWidth="613.0">
+      <ScrollPane fx:id="spDescargas" prefHeight="425.0" prefWidth="613.0" style="-fx-background-color: transparent;">
          <content>
-            <VBox fx:id="vbDescargas" prefHeight="198.0" prefWidth="574.0" />
+            <VBox fx:id="vbDescargas" prefHeight="406.0" prefWidth="590.0" style="-fx-background-color: transparent;" />
          </content>
       </ScrollPane>
    </children>
