@@ -7,8 +7,8 @@ import javafx.scene.control.ProgressBar;
 
 public class DescController {
 
-    public Label lbURL, lbVelocidad;
-    public ProgressBar pbProgreso;
+    public Label lbNombre, lbVelocidad;
+    public ProgressBar pbDescarga;
 
     @FXML
     public void parar(ActionEvent event){
@@ -16,7 +16,9 @@ public class DescController {
     }
 
     public void pintarDatos(String url){
-        lbURL.setText(url);
+        lbNombre.setText("Descargando --> " + url);
+        Hilo hilo = new Hilo(lbNombre, pbDescarga);
+        hilo.start();
     }
 
 }

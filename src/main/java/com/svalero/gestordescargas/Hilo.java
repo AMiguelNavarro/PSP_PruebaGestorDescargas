@@ -1,11 +1,17 @@
 package com.svalero.gestordescargas;
 
+import javafx.application.Platform;
+import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
+
 public class Hilo extends Thread{
 
-    private String url;
+    private Label lbNombre;
+    private ProgressBar pbDescarga;
 
-    public Hilo(String url){
-        this.url = url;
+    public Hilo(Label lbNombre, ProgressBar pbDescarga){
+        this.lbNombre = lbNombre;
+        this.pbDescarga = pbDescarga;
     }
 
     /**
@@ -13,6 +19,20 @@ public class Hilo extends Thread{
      */
     @Override
     public void run() {
+        for (int i = 1; i <= 5; i++) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ie){
+                ie.printStackTrace();
+            }
+            final int valor = i;
+            Platform.runLater(new Runnable() {
+                @Override
+                public void run() {
+                    pbDescarga.setProgress((double)valor/5);
+                }
+            });
 
+        }
     }
 }

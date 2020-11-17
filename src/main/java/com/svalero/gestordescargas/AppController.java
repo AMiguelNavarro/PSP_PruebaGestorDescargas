@@ -24,7 +24,7 @@ public class AppController {
         String URL = tfURL.getText();
         try{
             FXMLLoader loader = new FXMLLoader();
-            Hilo hilo = new Hilo(URL);
+
             DescController controller = new DescController();
 
             loader.setLocation(R.getUI("descarga.fxml"));
